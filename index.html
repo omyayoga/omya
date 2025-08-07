@@ -168,7 +168,7 @@
         .class-details {
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
-            padding: 1.8rem;
+            padding: 2rem;
             border-radius: 12px;
             margin: 2rem auto;
             max-width: 500px;
@@ -176,6 +176,14 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             opacity: 0;
             animation: fadeInUp 0.8s 0.4s forwards;
+        }
+        
+        .class-details p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .class-details p:last-child {
+            margin-bottom: 0;
         }
         
         .cta-buttons {
@@ -417,64 +425,100 @@
             animation: fadeIn 0.8s 0.5s forwards;
         }
         
-        /* Future Classes Section */
-        .future-classes {
+        /* Upcoming Class Section */
+        .upcoming-class {
             background-color: var(--beige);
             padding: 4rem 0;
         }
         
-        .classes-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .class-card {
+        .class-details-card {
             background-color: var(--light);
             border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            width: 200px;
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: left;
         }
         
-        .class-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        .class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--sand);
         }
         
-        .class-icon {
-            font-size: 2rem;
-            margin-bottom: 0.8rem;
+        .class-title {
+            font-size: 1.8rem;
+            color: var(--terracotta);
         }
         
-        .class-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .class-card p {
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-        
-        .class-button {
-            display: inline-block;
+        .class-date {
             background-color: var(--terracotta);
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 50px;
-            text-decoration: none;
+            border-radius: 30px;
             font-weight: 500;
-            font-size: 0.85rem;
-            transition: var(--transition);
         }
         
-        .class-button:hover {
-            background-color: #b07054;
+        .class-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .class-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--terracotta);
+        }
+        
+        .info-text {
+            font-size: 0.95rem;
+        }
+        
+        .info-label {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+        
+        .what-to-bring {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--sand);
+        }
+        
+        .bring-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .bring-item {
+            background-color: var(--sand);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .location-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: var(--sand);
+            border-radius: 8px;
         }
         
         /* Footer */
@@ -568,6 +612,16 @@
                 width: 100%;
                 max-width: 300px;
             }
+            
+            .class-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .class-info {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -583,9 +637,8 @@
         </div>
         
         <div class="nav-links" id="navLinks">
-            <a href="#classes">Clases</a>
-            <a href="#retreats">Retiros</a>
-            <a href="#training">Formación</a>
+            <a href="#upcoming">Próxima Clase</a>
+            <a href="#pricing">Inscripción</a>
             <a href="#about">Sobre</a>
             <a href="#contact">Contacto</a>
         </div>
@@ -598,9 +651,9 @@
             <p class="hero-subtitle">Un espacio sagrado para mujeres</p>
             
             <div class="class-details">
-                <p><strong>Domingo, 10:30 AM</strong></p>
-                <p>Yoga para Principiantes</p>
-                <p>En solo 4 días</p>
+                <p><strong>Domingo, 10:30 AM</strong> • Aliento al Sol (Parte 1)</p>
+                <p>Yoga para Principiantes en español • Beginner-friendly</p>
+                <p>En 4 días • In 4 days</p>
             </div>
             
             <div class="cta-buttons">
@@ -661,6 +714,76 @@
         </div>
     </section>
     
+    <!-- Upcoming Class Section -->
+    <section class="upcoming-class" id="upcoming">
+        <div class="container">
+            <div class="section-content">
+                <h2>Detalles de la Clase</h2>
+                
+                <div class="class-details-card">
+                    <div class="class-header">
+                        <h3 class="class-title">Aliento al Sol (Parte 1)</h3>
+                        <div class="class-date">Domingo, 10:30 AM</div>
+                    </div>
+                    
+                    <div class="class-description">
+                        <p class="es-text">Esta clase forma parte de una serie mensual de 4 sesiones, diseñada para introducirse al yoga de forma amable y accesible en español. Cada encuentro es una experiencia independiente donde exploramos los fundamentos del Saludo al Sol A, con movimiento consciente, respiración y presencia.</p>
+                        <p class="en-text">This is part of a 4-part monthly series designed to gently introduce you to yoga in Spanish. Each class offers a stand-alone experience that explores the foundations of Sun Salutation A, guiding you through movement, breath, and mindfulness at a beginner-friendly pace.</p>
+                    </div>
+                    
+                    <div class="class-info">
+                        <div class="info-item">
+                            <div class="info-icon">⏱️</div>
+                            <div class="info-text">
+                                <div class="info-label">Duración • Duration</div>
+                                <div>75 minutos • minutes</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">👥</div>
+                            <div class="info-text">
+                                <div class="info-label">Nivel • Level</div>
+                                <div>Principiantes • Beginners</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">🌐</div>
+                            <div class="info-text">
+                                <div class="info-label">Idioma • Language</div>
+                                <div>Español • Spanish</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">🧘</div>
+                            <div class="info-text">
+                                <div class="info-label">Qué traer • What to bring</div>
+                                <div>Mat y agua • Mat and water</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="what-to-bring">
+                        <h4>Qué traer • What to bring</h4>
+                        <div class="bring-list">
+                            <div class="bring-item">Tapete de yoga • Yoga mat</div>
+                            <div class="bring-item">Agua • Water</div>
+                            <div class="bring-item">Ropa cómoda • Comfortable clothes</div>
+                            <div class="bring-item">Toalla • Towel (opcional)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-info">
+                        <p class="es-text"><strong>Ubicación:</strong> Esta clase se impartirá en línea a través de Zoom. Recibirás el enlace de acceso después de registrarte.</p>
+                        <p class="en-text"><strong>Location:</strong> This class will be held online via Zoom. You will receive the access link after registration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
@@ -704,42 +827,11 @@
         </div>
     </section>
     
-    <!-- Future Classes Section -->
-    <section class="future-classes" id="classes">
-        <div class="container">
-            <div class="section-content">
-                <h2>Próximamente</h2>
-                <div class="classes-grid">
-                    <div class="class-card">
-                        <div class="class-icon">🧘‍♀️</div>
-                        <h3>Clases</h3>
-                        <p>Yoga para todos los niveles</p>
-                        <a href="#" class="class-button">Próximamente</a>
-                    </div>
-                    
-                    <div class="class-card">
-                        <div class="class-icon">🌿</div>
-                        <h3>Retiros</h3>
-                        <p>Experiencias inmersivas</p>
-                        <a href="#" class="class-button">Próximamente</a>
-                    </div>
-                    
-                    <div class="class-card">
-                        <div class="class-icon">📿</div>
-                        <h3>Formación</h3>
-                        <p>Certificación de profesores</p>
-                        <a href="#" class="class-button">Próximamente</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="container">
             <p>OM|YA • Espacio de Sanación y Conexión</p>
-            <p style="margin-top: 0.5rem;">© 2023 OM|YA • Síguenos en Instagram: @omya.yoga</p>
+            <p style="margin-top: 0.5rem;">© 2025 OM|YA • Síguenos en Instagram: @omya.yoga</p>
         </div>
     </footer>
     
