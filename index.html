@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Un Abrazo Para el Alma - OM|YA</title>
-    <meta name="description" content="Yoga sanadora para mujeres en español. Find your inner peace.">
+    <meta name="description" content="Un espacio sagrado de yoga sanadora para mujeres. A sacred space for healing yoga.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://omyayoga.com/">
     <meta property="og:title" content="Un Abrazo Para el Alma - OM|YA">
-    <meta property="og:description" content="Yoga sanadora para mujeres en español. Find your inner peace.">
+    <meta property="og:description" content="Un espacio sagrado de yoga sanadora para mujeres. A sacred space for healing yoga.">
     <meta property="og:image" content="https://omyayoga.com/og-image.jpg">
     
     <!-- Fonts -->
@@ -82,6 +82,47 @@
             scroll-behavior: smooth;
         }
         
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(248, 245, 240, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+        
         /* Hero Section */
         .hero {
             min-height: 90vh;
@@ -118,7 +159,7 @@
         
         .hero-subtitle {
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             opacity: 0.8;
             opacity: 0;
             animation: fadeInUp 0.8s 0.2s forwards;
@@ -129,7 +170,7 @@
             backdrop-filter: blur(10px);
             padding: 1.8rem;
             border-radius: 12px;
-            margin: 2.5rem auto;
+            margin: 2rem auto;
             max-width: 500px;
             font-size: 1rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -150,7 +191,7 @@
             display: inline-block;
             background-color: var(--terracotta);
             color: white;
-            padding: 0.9rem 2rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
@@ -213,6 +254,21 @@
             line-height: 1.7;
         }
         
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .es-text {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .en-text {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        
         /* Experience Section */
         .experience {
             background-color: var(--beige);
@@ -259,7 +315,7 @@
             flex-direction: column;
             gap: 1.5rem;
             margin-top: 3rem;
-            max-width: 600px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -268,13 +324,13 @@
             background-color: var(--beige);
             padding: 1.8rem;
             border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             opacity: 0;
             animation: fadeInUp 0.5s forwards;
+            position: relative;
+            overflow: hidden;
         }
         
         .pricing-option:nth-child(1) { animation-delay: 0.1s; }
@@ -288,23 +344,64 @@
         
         .price-tag {
             font-weight: 600;
-            font-size: 1.3rem;
+            font-size: 2.5rem;
             color: var(--terracotta);
+            margin: 1rem 0;
         }
         
         .pricing-button {
             background-color: var(--terracotta);
             color: white;
             border: none;
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 2rem;
             border-radius: 50px;
             font-weight: 500;
             cursor: pointer;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
         
         .pricing-button:hover {
             background-color: #b07054;
+        }
+        
+        .heart-animation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: var(--terracotta);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .heart-animation.animate {
+            animation: heartFloat 1s ease-out forwards;
+        }
+        
+        @keyframes heartFloat {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -150%) scale(1.5);
+            }
+        }
+        
+        .option-title {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .option-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+            margin-bottom: 1rem;
         }
         
         /* Donate Section */
@@ -313,11 +410,71 @@
             padding: 2.5rem;
             background-color: var(--sand);
             border-radius: 12px;
-            max-width: 600px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0;
             animation: fadeIn 0.8s 0.5s forwards;
+        }
+        
+        /* Future Classes Section */
+        .future-classes {
+            background-color: var(--beige);
+            padding: 4rem 0;
+        }
+        
+        .classes-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .class-card {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            width: 200px;
+        }
+        
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .class-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .class-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .class-card p {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .class-button {
+            display: inline-block;
+            background-color: var(--terracotta);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        
+        .class-button:hover {
+            background-color: #b07054;
         }
         
         /* Footer */
@@ -346,40 +503,125 @@
             to { opacity: 1; }
         }
         
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+        
         /* Responsive */
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 70%;
+                background-color: rgba(248, 245, 240, 0.98);
+                flex-direction: column;
+                padding: 5rem 2rem;
+                transform: translateX(100%);
+                transition: transform 0.5s ease;
+                z-index: 1001;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            
+            .menu-toggle {
+                display: flex;
+                z-index: 1002;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
             .cta-buttons {
-                flex-direction: row;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">OM|YA</a>
+        
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="#classes">Clases</a>
+            <a href="#retreats">Retiros</a>
+            <a href="#training">Formación</a>
+            <a href="#about">Sobre</a>
+            <a href="#contact">Contacto</a>
+        </div>
+    </nav>
+    
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <h1>Un Abrazo Para el Alma</h1>
-            <p class="hero-subtitle">A healing yoga experience for women • Encuentra tu paz interior</p>
+            <p class="hero-subtitle">Un espacio sagrado para mujeres</p>
             
             <div class="class-details">
-                <p><strong>Domingo, 10:30 AM</strong> • Aliento al Sol (Part 1)</p>
-                <p>Yoga para Principiantes en español • Beginner-friendly</p>
-                <p>En 4 días • In 4 days</p>
+                <p><strong>Domingo, 10:30 AM</strong></p>
+                <p>Yoga para Principiantes</p>
+                <p>En solo 4 días</p>
             </div>
             
             <div class="cta-buttons">
-                <a href="#pricing" class="cta-button">Reserve Your Spot 💖</a>
-                <a href="#donate" class="cta-button donate-button">Pay What You Can</a>
+                <a href="#pricing" class="cta-button">Reserva Tu Lugar 💖</a>
+                <a href="#donate" class="cta-button donate-button">Contribuye</a>
             </div>
         </div>
     </section>
     
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="section-content">
-                <h2>Meet Stephany</h2>
-                <p class="about-text">Yoga guide especializada en trauma healing, community builder y facilitadora soul-led. Stephany crea espacios seguros donde mujeres pueden reconectar con su cuerpo y encontrar inner peace a través del yoga. Con más de 500 horas de formación en yoga terapéutico, ella combina técnicas ancestrales con enfoques modernos para ofrecer experiencias transformadoras.</p>
+                <h2>Conoce a Stephany</h2>
+                <div class="about-text">
+                    <p class="es-text">Guía de yoga especializada en sanación de traumas, constructora de comunidades y facilitadora consciente. Stephany crea espacios sagrados donde las mujeres pueden reconectar con su cuerpo, su espíritu y encontrar paz interior a través del yoga.</p>
+                    <p class="en-text">A trauma-informed yoga guide, community builder, and soul-led facilitator. Stephany creates sacred spaces where women can reconnect with their bodies, spirits, and find inner peace through yoga.</p>
+                    
+                    <p class="es-text">Con más de 500 horas de formación en yoga terapéutico, ella fusiona sabiduría ancestral con enfoques contemporáneos para ofrecer experiencias transformadoras que honran la sabiduría del cuerpo y el alma.</p>
+                    <p class="en-text">With over 500 hours of therapeutic yoga training, she blends ancestral wisdom with contemporary approaches to offer transformative experiences that honor the wisdom of body and soul.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -388,12 +630,32 @@
     <section class="experience">
         <div class="container">
             <div class="section-content">
-                <h2>What You'll Experience</h2>
+                <h2>Lo que Vivirás</h2>
                 <ul class="experience-list">
-                    <li><strong>Respiración Consciente</strong> • Breathing techniques para calmar el sistema nervioso</li>
-                    <li><strong>Liberación Emocional</strong> • Un espacio seguro para procesar emociones</li>
-                    <li><strong>Comunidad</strong> • Conéctate con otras mujeres en un ambiente de apoyo</li>
-                    <li><strong>Reconexión</strong> • Redescubre la conexión con tu cuerpo y tu sabiduría interior</li>
+                    <li>
+                        <p class="es-text"><strong>Respiración Consciente</strong></p>
+                        <p class="en-text">Conscious Breathing</p>
+                        <p class="es-text">Técnicas de respiración para calmar el sistema nervioso y conectar con el presente</p>
+                        <p class="en-text">Breathing techniques to calm the nervous system and connect with the present</p>
+                    </li>
+                    <li>
+                        <p class="es-text"><strong>Liberación Emocional</strong></p>
+                        <p class="en-text">Emotional Release</p>
+                        <p class="es-text">Un espacio seguro para procesar y liberar emociones almacenadas en el cuerpo</p>
+                        <p class="en-text">A safe space to process and release emotions stored in the body</p>
+                    </li>
+                    <li>
+                        <p class="es-text"><strong>Comunidad</strong></p>
+                        <p class="en-text">Community</p>
+                        <p class="es-text">Conéctate con otras mujeres en un círculo de apoyo y comprensión mutua</p>
+                        <p class="en-text">Connect with other women in a circle of support and mutual understanding</p>
+                    </li>
+                    <li>
+                        <p class="es-text"><strong>Reconexión</strong></p>
+                        <p class="en-text">Reconnection</p>
+                        <p class="es-text">Redescubre la conexión con tu cuerpo, tu intuición y tu sabiduría interior</p>
+                        <p class="en-text">Rediscover the connection with your body, intuition, and inner wisdom</p>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -403,55 +665,78 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-content">
-                <h2>Choose Your Option</h2>
+                <h2>Elige Tu Opción</h2>
                 <p>Todas las opciones incluyen acceso completo a la clase</p>
                 
                 <div class="pricing-options">
                     <div class="pricing-option">
-                        <div>
-                            <h3>Entrada Accesible</h3>
-                            <p>Perfecto para presupuestos ajustados</p>
-                        </div>
-                        <div>
-                            <span class="price-tag">$20</span>
-                            <button class="pricing-button" onclick="window.open('https://buy.stripe.com/test_00g5kne3u2Vh1uE288', '_blank')">Select</button>
-                        </div>
+                        <h3 class="option-title">Entrada Accesible</h3>
+                        <p class="option-subtitle">Para aquellas con recursos limitados</p>
+                        <div class="price-tag">$20</div>
+                        <button class="pricing-button" onclick="handlePaymentClick(this, 'https://buy.stripe.com/test_00g5kne3u2Vh1uE288')">Seleccionar</button>
+                        <div class="heart-animation">💖</div>
                     </div>
                     
                     <div class="pricing-option">
-                        <div>
-                            <h3>Apoya el Trabajo</h3>
-                            <p>Support the continuation of this space</p>
-                        </div>
-                        <div>
-                            <span class="price-tag">$30</span>
-                            <button class="pricing-button" onclick="window.open('https://buy.stripe.com/test_00g5kne3u2Vh1uE288', '_blank')">Select</button>
-                        </div>
+                        <h3 class="option-title">Apoya el Trabajo</h3>
+                        <p class="option-subtitle">Ayuda a mantener este espacio sagrado</p>
+                        <div class="price-tag">$30</div>
+                        <button class="pricing-button" onclick="handlePaymentClick(this, 'https://buy.stripe.com/test_00g5kne3u2Vh1uE288')">Seleccionar</button>
+                        <div class="heart-animation">💖</div>
                     </div>
                     
                     <div class="pricing-option">
-                        <div>
-                            <h3>Patrocina a Otra Alma</h3>
-                            <p>Help another woman attend</p>
-                        </div>
-                        <div>
-                            <span class="price-tag">$50</span>
-                            <button class="pricing-button" onclick="window.open('https://buy.stripe.com/test_00g5kne3u2Vh1uE288', '_blank')">Select</button>
-                        </div>
+                        <h3 class="option-title">Patrocina a Otra Alma</h3>
+                        <p class="option-subtitle">Permite que otra mujer participe</p>
+                        <div class="price-tag">$50</div>
+                        <button class="pricing-button" onclick="handlePaymentClick(this, 'https://buy.stripe.com/test_00g5kne3u2Vh1uE288')">Seleccionar</button>
+                        <div class="heart-animation">💖</div>
                     </div>
                 </div>
                 
                 <div id="donate" class="donate-section">
-                    <h3>Pay What You Can</h3>
-                    <p>Si ninguna opción funciona para ti, contribuye con cualquier cantidad.</p>
-                    <button class="cta-button donate-button" onclick="window.open('https://buy.stripe.com/test_00g5kne3u2Vh1uE288', '_blank')">Donate</button>
+                    <h3>Contribuye Lo Que Puedas</h3>
+                    <p class="es-text">Si ninguna de estas opciones se ajusta a tu situación, puedes contribuir con cualquier cantidad. Creemos que la sanación debe ser accesible para todas.</p>
+                    <p class="en-text">If none of these options fit your situation, you can contribute any amount. We believe healing should be accessible to all.</p>
+                    <button class="cta-button donate-button" onclick="handlePaymentClick(this, 'https://buy.stripe.com/test_00g5kne3u2Vh1uE288')">Contribuir</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Future Classes Section -->
+    <section class="future-classes" id="classes">
+        <div class="container">
+            <div class="section-content">
+                <h2>Próximamente</h2>
+                <div class="classes-grid">
+                    <div class="class-card">
+                        <div class="class-icon">🧘‍♀️</div>
+                        <h3>Clases</h3>
+                        <p>Yoga para todos los niveles</p>
+                        <a href="#" class="class-button">Próximamente</a>
+                    </div>
+                    
+                    <div class="class-card">
+                        <div class="class-icon">🌿</div>
+                        <h3>Retiros</h3>
+                        <p>Experiencias inmersivas</p>
+                        <a href="#" class="class-button">Próximamente</a>
+                    </div>
+                    
+                    <div class="class-card">
+                        <div class="class-icon">📿</div>
+                        <h3>Formación</h3>
+                        <p>Certificación de profesores</p>
+                        <a href="#" class="class-button">Próximamente</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
             <p>OM|YA • Espacio de Sanación y Conexión</p>
             <p style="margin-top: 0.5rem;">© 2023 OM|YA • Síguenos en Instagram: @omya.yoga</p>
@@ -459,15 +744,50 @@
     </footer>
     
     <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
+        
+        // Handle payment button clicks with heart animation
+        function handlePaymentClick(button, url) {
+            // Create heart animation
+            const heart = button.nextElementSibling;
+            heart.classList.remove('animate');
+            void heart.offsetWidth; // Trigger reflow
+            heart.classList.add('animate');
+            
+            // Open payment link after a short delay
+            setTimeout(() => {
+                window.open(url, '_blank');
+            }, 300);
+        }
         
         // Add scroll animations
         const observerOptions = {
