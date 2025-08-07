@@ -1,1 +1,494 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Abrazo Para el Alma - OM|YA</title>
+    <meta name="description" content="Yoga sanadora para mujeres en español. Find your inner peace.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omyayoga.com/">
+    <meta property="og:title" content="Un Abrazo Para el Alma - OM|YA">
+    <meta property="og:description" content="Yoga sanadora para mujeres en español. Find your inner peace.">
+    <meta property="og:image" content="https://omyayoga.com/og-image.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --beige: #F8F5F0;
+            --sand: #E8E1D9;
+            --blush: #F0D6D0;
+            --terracotta: #C17F60;
+            --soft-green: #A7C4A0;
+            --dark: #333333;
+            --light: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--beige);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--terracotta);
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--terracotta);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(240, 214, 208, 0.2) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.8;
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.2s forwards;
+        }
+        
+        .class-details {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.8rem;
+            border-radius: 12px;
+            margin: 2.5rem auto;
+            max-width: 500px;
+            font-size: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.4s forwards;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.6s forwards;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--terracotta);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            transform: translateY(0);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(193, 127, 96, 0.2);
+        }
+        
+        .donate-button {
+            background-color: var(--soft-green);
+        }
+        
+        .donate-button:hover {
+            box-shadow: 0 10px 20px rgba(167, 196, 160, 0.2);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-text {
+            margin-top: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: var(--beige);
+        }
+        
+        .experience-list {
+            list-style: none;
+            margin-top: 2.5rem;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .experience-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 1.8rem;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        
+        .experience-list li:nth-child(1) { animation-delay: 0.1s; }
+        .experience-list li:nth-child(2) { animation-delay: 0.2s; }
+        .experience-list li:nth-child(3) { animation-delay: 0.3s; }
+        .experience-list li:nth-child(4) { animation-delay: 0.4s; }
+        
+        .experience-list li:before {
+            content: "•";
+            color: var(--terracotta);
+            font-size: 1.8rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--light);
+        }
+        
+        .pricing-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .pricing-option {
+            background-color: var(--beige);
+            padding: 1.8rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            animation: fadeInUp 0.5s forwards;
+        }
+        
+        .pricing-option:nth-child(1) { animation-delay: 0.1s; }
+        .pricing-option:nth-child(2) { animation-delay: 0.2s; }
+        .pricing-option:nth-child(3) { animation-delay: 0.3s; }
+        
+        .pricing-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .price-tag {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--terracotta);
+        }
+        
+        .pricing-button {
+            background-color: var(--terracotta);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .pricing-button:hover {
+            background-color: #b07054;
+        }
+        
+        /* Donate Section */
+        .donate-section {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background-color: var(--sand);
+            border-radius: 12px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeIn 0.8s 0.5s forwards;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsive */
+        @media (min-width: 768px) {
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Un Abrazo Para el Alma</h1>
+            <p class="hero-subtitle">A healing yoga experience for women • Encuentra tu paz interior</p>
+            
+            <div class="class-details">
+                <p><strong>Domingo, 10:30 AM</strong> • Aliento al Sol (Part 1)</p>
+                <p>Yoga para Principiantes en español • Beginner-friendly</p>
+                <p>En 4 días • In 4 days</p>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#pricing" class="cta-button">Reserve Your Spot 💖</a>
+                <a href="#donate" class="cta-button donate-button">Pay What You Can</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-content">
+                <h2>Meet Stephany</h2>
+                <p class="about-text">Yoga guide especializada en trauma healing, community builder y facilitadora soul-led. Stephany crea espacios seguros donde mujeres pueden reconectar con su cuerpo y encontrar inner peace a través del yoga. Con más de 500 horas de formación en yoga terapéutico, ella combina técnicas ancestrales con enfoques modernos para ofrecer experiencias transformadoras.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section class="experience">
+        <div class="container">
+            <div class="section-content">
+                <h2>What You'll Experience</h2>
+                <ul class="experience-list">
+                    <li><strong>Respiración Consciente</strong> • Breathing techniques para calmar el sistema nervioso</li>
+                    <li><strong>Liberación Emocional</strong> • Un espacio seguro para procesar emociones</li>
+                    <li><strong>Comunidad</strong> • Conéctate con otras mujeres en un ambiente de apoyo</li>
+                    <li><strong>Reconexión</strong> • Redescubre la conexión con tu cuerpo y tu sabiduría interior</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-content">
+                <h2>Choose Your Option</h2>
+                <p>Todas las opciones incluyen acceso completo a la clase</p>
+                
+                <div class="pricing-options">
+                    <div class="pricing-option">
+                        <div>
+                            <h3>Entrada Accesible</h3>
+                            <p>Perfecto para presupuestos ajustados</p>
+                        </div>
+                        <div>
+                            <span class="price-tag">$20</span>
+                            <button class="pricing-button" onclick="window.open('https://buy.stripe.com/test_00g5kne3u2Vh1uE288', '_blank')">Select</button>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-option">
+                        <div>
+                            <h3>Apoya el Trabajo</h3>
+                            <p>Support the continuation of this space</p>
+                        </div>
+                        <div>
+                            <span class="price-tag">$30</span>
+                            <button class="pricing-button" onclick="window.open('https://buy.stripe.com/test_00g5kne3u2Vh1uE288', '_blank')">Select</button>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-option">
+                        <div>
+                            <h3>Patrocina a Otra Alma</h3>
+                            <p>Help another woman attend</p>
+                        </div>
+                        <div>
+                            <span class="price-tag">$50</span>
+                            <button class="pricing-button" onclick="window.open('https://buy.stripe.com/test_00g5kne3u2Vh1uE288', '_blank')">Select</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="donate" class="donate-section">
+                    <h3>Pay What You Can</h3>
+                    <p>Si ninguna opción funciona para ti, contribuye con cualquier cantidad.</p>
+                    <button class="cta-button donate-button" onclick="window.open('https://buy.stripe.com/test_00g5kne3u2Vh1uE288', '_blank')">Donate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>OM|YA • Espacio de Sanación y Conexión</p>
+            <p style="margin-top: 0.5rem;">© 2023 OM|YA • Síguenos en Instagram: @omya.yoga</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
